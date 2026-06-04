@@ -2,6 +2,22 @@ console.log("JS Loaded");document.addEventListener('DOMContentLoaded',function (
     createParticles();
     initializeAnimations();
     setupScrollAnimations();
+
+     // Music Toggle
+    const music = document.getElementById("birthdaySong");
+    const musicBtn = document.getElementById("musicBtn");
+
+    if (music && musicBtn) {
+        musicBtn.addEventListener("click", () => {
+            if (music.paused) {
+                music.play();
+                musicBtn.innerHTML = "🔊 Pause Music";
+            } else {
+                music.pause();
+                musicBtn.innerHTML = "🎵 Play Music";
+            }
+        });
+    }
 });
 
 
